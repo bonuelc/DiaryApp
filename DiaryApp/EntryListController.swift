@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntryListController.swift
 //  DiaryApp
 //
 //  Created by Christopher Bonuel on 12/6/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntryListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
