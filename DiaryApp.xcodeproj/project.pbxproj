@@ -392,6 +392,7 @@
 				85AD0CC31DF7729500810AB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85AD0CC41DF7729500810AB4 /* Build configuration list for PBXNativeTarget "DiaryAppTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +401,7 @@
 				85AD0CC61DF7729500810AB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
