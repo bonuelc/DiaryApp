@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		854340581DF8AB0500E49443 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */; };
+		854340591DF8AB0500E49443 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340571DF8AB0500E49443 /* Entry.swift */; };
 		85AD0CA51DF7729500810AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CA41DF7729500810AB4 /* AppDelegate.swift */; };
 		85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CA61DF7729500810AB4 /* EntryListController.swift */; };
 		85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CAB1DF7729500810AB4 /* DiaryApp.xcdatamodeld */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "../Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		854340571DF8AB0500E49443 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = ../Entry.swift; sourceTree = "<group>"; };
 		85AD0CA11DF7729400810AB4 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AD0CA41DF7729500810AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AD0CA61DF7729500810AB4 /* EntryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */,
 				85AD0CB31DF7729500810AB4 /* Info.plist */,
 				85AD0CAB1DF7729500810AB4 /* DiaryApp.xcdatamodeld */,
+				854340571DF8AB0500E49443 /* Entry.swift */,
+				854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854340591DF8AB0500E49443 /* Entry.swift in Sources */,
+				854340581DF8AB0500E49443 /* Entry+CoreDataProperties.swift in Sources */,
 				85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */,
 				85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */,
 				85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */,
