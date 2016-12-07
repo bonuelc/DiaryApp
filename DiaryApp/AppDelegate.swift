@@ -17,6 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        guard let window = window else { return false }
+        window.backgroundColor = .whiteColor()
+        
+        let splitVC = SplitViewController()
+        
+        let masterVC = EntryListController()
+        let masterNavController = UINavigationController(rootViewController: masterVC)
+        
+        let detailVC = EntryViewController()
+        let detailNavController = UINavigationController(rootViewController: detailVC)
+        
+        splitVC.viewControllers = [masterNavController, detailNavController]
+        
+        window.rootViewController = splitVC
+        window.makeKeyAndVisible()
+        
         return true
     }
 
