@@ -9,7 +9,23 @@
 import UIKit
 
 class EntryViewController: UIViewController {
+    
+    // MARK: - UI
+    
+    lazy var textView: UITextView = {
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        let textView = UITextView()
+        
+        textView.text = self.entry?.text ?? ""
+        textView.textAlignment = NSTextAlignment.Natural
+        
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textView
+    }()
+    
     // MARK: Properties
     
     var entry: Entry?
@@ -27,6 +43,20 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Layout
+    
+    override func viewWillLayoutSubviews() {
+        
+        view.addSubview(textView)
+        
+        NSLayoutConstraint.activateConstraints([
+            textView.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
+            textView.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor),
+            textView.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
+            textView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+        ])
     }
 }
 
