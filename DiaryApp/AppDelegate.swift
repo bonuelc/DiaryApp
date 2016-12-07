@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         masterVC.managedObjectContext = self.managedObjectContext
         let masterNavController = UINavigationController(rootViewController: masterVC)
         
-        let detailVC = EntryViewController()
+        let detailVC = EntryViewController(entry: nil)
         let detailNavController = UINavigationController(rootViewController: detailVC)
         
         splitVC.viewControllers = [masterNavController, detailNavController]
