@@ -74,6 +74,16 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		8543405A1DF8AB3A00E49443 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85AD0CAB1DF7729500810AB4 /* DiaryApp.xcdatamodeld */,
+				854340571DF8AB0500E49443 /* Entry.swift */,
+				854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		85AD0C981DF7729400810AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,14 +105,12 @@
 		85AD0CA31DF7729500810AB4 /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				8543405A1DF8AB3A00E49443 /* Model */,
 				8543404D1DF8A9DE00E49443 /* Controller */,
 				85AD0CA41DF7729500810AB4 /* AppDelegate.swift */,
 				85AD0CAE1DF7729500810AB4 /* Assets.xcassets */,
 				85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */,
 				85AD0CB31DF7729500810AB4 /* Info.plist */,
-				85AD0CAB1DF7729500810AB4 /* DiaryApp.xcdatamodeld */,
-				854340571DF8AB0500E49443 /* Entry.swift */,
-				854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
