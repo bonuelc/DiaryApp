@@ -14,6 +14,7 @@
 		85AD0CB21DF7729500810AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */; };
 		85AD0CBD1DF7729500810AB4 /* DiaryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CBC1DF7729500810AB4 /* DiaryAppTests.swift */; };
 		85E43F5E1DF779C600261126 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E43F5D1DF779C600261126 /* SplitViewController.swift */; };
+		85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E43F5F1DF77AAF00261126 /* EntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		85AD0CBC1DF7729500810AB4 /* DiaryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAppTests.swift; sourceTree = "<group>"; };
 		85AD0CBE1DF7729500810AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85E43F5D1DF779C600261126 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		85E43F5F1DF77AAF00261126 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				85AD0CA41DF7729500810AB4 /* AppDelegate.swift */,
 				85E43F5D1DF779C600261126 /* SplitViewController.swift */,
 				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
+				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
 				85AD0CAE1DF7729500810AB4 /* Assets.xcassets */,
 				85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */,
 				85AD0CB31DF7729500810AB4 /* Info.plist */,
@@ -201,6 +204,7 @@
 			files = (
 				85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */,
 				85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */,
+				85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */,
 				85AD0CA51DF7729500810AB4 /* AppDelegate.swift in Sources */,
 				85E43F5E1DF779C600261126 /* SplitViewController.swift in Sources */,
 			);
