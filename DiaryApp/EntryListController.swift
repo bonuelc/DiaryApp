@@ -23,6 +23,8 @@ class EntryListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpBarButtonItems()
     }
     
     // MARK: - Layout
@@ -41,3 +43,29 @@ class EntryListController: UIViewController {
     }
 }
 
+// MARK: - Navigation
+
+extension EntryListController {
+    
+    @objc func presentEntryViewController() {
+        
+        let entryVC = EntryViewController()
+        entryVC.entry = Entry.entry(inManagedObjectContext: managedObjectContext!)
+        
+        entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+        entryVC.navigationItem.leftItemsSupplementBackButton = true
+        
+        self.navigationController?.pushViewController(entryVC, animated: true)
+    }
+}
+
+// MARK: - Helper Methods
+
+extension EntryListController {
+    
+    func setUpBarButtonItems() {
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(presentEntryViewController))
+        navigationItem.rightBarButtonItem = addButton
+    }
+}
