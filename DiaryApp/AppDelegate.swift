@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let splitVC = SplitViewController()
         
         let masterVC = EntryListController()
+        masterVC.managedObjectContext = self.managedObjectContext
         let masterNavController = UINavigationController(rootViewController: masterVC)
         
         let detailVC = EntryViewController()
