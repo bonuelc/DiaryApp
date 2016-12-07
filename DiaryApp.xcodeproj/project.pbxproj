@@ -60,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8543404D1DF8A9DE00E49443 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85E43F5D1DF779C600261126 /* SplitViewController.swift */,
+				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
+				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		85AD0C981DF7729400810AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +91,8 @@
 		85AD0CA31DF7729500810AB4 /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				8543404D1DF8A9DE00E49443 /* Controller */,
 				85AD0CA41DF7729500810AB4 /* AppDelegate.swift */,
-				85E43F5D1DF779C600261126 /* SplitViewController.swift */,
-				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
-				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
 				85AD0CAE1DF7729500810AB4 /* Assets.xcassets */,
 				85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */,
 				85AD0CB31DF7729500810AB4 /* Info.plist */,
