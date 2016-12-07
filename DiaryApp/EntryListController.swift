@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class EntryListController: UIViewController {
+    
+    // MARK: Properties
+    
+    var managedObjectContext: NSManagedObjectContext?
 
     override func viewDidLoad() {
         super.viewDidLoad()
