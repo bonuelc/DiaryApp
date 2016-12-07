@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let detailNavController = UINavigationController(rootViewController: detailVC)
         
         splitVC.viewControllers = [masterNavController, detailNavController]
+        splitVC.delegate = self
         
         window.rootViewController = splitVC
         window.makeKeyAndVisible()
@@ -61,6 +62,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // MARK: - Split view
+    
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+        guard let detailNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let detailVC = detailNavController.topViewController as? EntryViewController else { return false }
+        if detailVC.entry == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the detailVC will be discarded.
+            return true
+        }
+        return false
     }
 
     // MARK: - Core Data stack
