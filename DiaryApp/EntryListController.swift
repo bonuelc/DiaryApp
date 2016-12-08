@@ -65,7 +65,23 @@ extension EntryListController {
     
     func setUpBarButtonItems() {
         
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(toggleEditing(_:)))
+        navigationItem.leftBarButtonItem = editButton
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(presentEntryViewController))
         navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func toggleEditing(sender: UIBarButtonItem) {
+        
+        if !tableView.editing {
+            tableView.editing = true
+            sender.title = "Done"
+            sender.style = .Done
+        } else {
+            tableView.editing = false
+            sender.title = "Edit"
+            sender.style = .Plain
+        }
     }
 }
