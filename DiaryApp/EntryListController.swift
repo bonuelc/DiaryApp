@@ -28,6 +28,8 @@ class EntryListController: UIViewController {
         super.viewDidLoad()
         
         setUpBarButtonItems()
+        
+        tableView.dataSource = dataSource
     }
     
     // MARK: - Layout
