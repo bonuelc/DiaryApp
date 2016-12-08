@@ -66,3 +66,12 @@ class EntryViewController: UIViewController {
     }
 }
 
+// MARK: - Helper Methods
+
+extension EntryViewController {
+    
+    @objc func cancelBarButtonItemTapped() {
+
+        delegate?.entryViewController(self, didFinishEditingEntryWithSave: false)
+    }
+}
