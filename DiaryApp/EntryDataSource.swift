@@ -18,7 +18,7 @@ class EntryDataSource: NSObject, UITableViewDataSource {
     init(tableView: UITableView, fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext) {
         
         self.tableView = tableView
-        self.fetchedResultsController = EntryFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext)
+        self.fetchedResultsController = EntryFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, tableView: tableView)
         
         super.init()
     }
