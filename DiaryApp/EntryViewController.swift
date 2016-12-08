@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol EntryViewControllerDelegate {
+    
+    func entryViewController(entryViewController: EntryViewController, didFinishEditingEntryWithSave saveEntry: Bool)
+}
+
 class EntryViewController: UIViewController {
     
     // MARK: - UI
