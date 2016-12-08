@@ -82,4 +82,9 @@ extension EntryViewController {
 
         delegate?.entryViewController(self, didFinishEditingEntryWithSave: false)
     }
+    
+    @objc func saveBarButtonItemTapped() {
+        
+        delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
+    }
 }
