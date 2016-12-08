@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		854340581DF8AB0500E49443 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */; };
 		854340591DF8AB0500E49443 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340571DF8AB0500E49443 /* Entry.swift */; };
+		856E66601DF9C4E800AF5070 /* EntryFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */; };
 		85AD0CA51DF7729500810AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CA41DF7729500810AB4 /* AppDelegate.swift */; };
 		85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CA61DF7729500810AB4 /* EntryListController.swift */; };
 		85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CAB1DF7729500810AB4 /* DiaryApp.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "../Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		854340571DF8AB0500E49443 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = ../Entry.swift; sourceTree = "<group>"; };
+		856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFetchedResultsController.swift; sourceTree = "<group>"; };
 		85AD0CA11DF7729400810AB4 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AD0CA41DF7729500810AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AD0CA61DF7729500810AB4 /* EntryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				85E43F5D1DF779C600261126 /* SplitViewController.swift */,
 				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
 				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
+				856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				854340591DF8AB0500E49443 /* Entry.swift in Sources */,
 				854340581DF8AB0500E49443 /* Entry+CoreDataProperties.swift in Sources */,
+				856E66601DF9C4E800AF5070 /* EntryFetchedResultsController.swift in Sources */,
 				85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */,
 				85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */,
 				85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */,
