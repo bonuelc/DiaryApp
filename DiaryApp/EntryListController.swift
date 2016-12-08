@@ -19,7 +19,10 @@ class EntryListController: UIViewController {
     
     // MARK: Properties
     
-    var managedObjectContext: NSManagedObjectContext?
+    var managedObjectContext: NSManagedObjectContext?    
+    lazy var dataSource: EntryDataSource = {
+        return EntryDataSource(tableView: self.tableView, fetchRequest: Entry.allEntriesRequest, managedObjectContext: self.managedObjectContext!)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
