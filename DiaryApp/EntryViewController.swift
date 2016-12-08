@@ -49,6 +49,8 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpBarButtonItems()
     }
     
     // MARK: - Layout
@@ -69,6 +71,12 @@ class EntryViewController: UIViewController {
 // MARK: - Helper Methods
 
 extension EntryViewController {
+    
+    func setUpBarButtonItems() {
+        
+        let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelBarButtonItemTapped))
+        navigationItem.leftBarButtonItem = cancelBarButtonItem
+    }
     
     @objc func cancelBarButtonItemTapped() {
 
