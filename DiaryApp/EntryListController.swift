@@ -90,3 +90,27 @@ extension EntryListController {
         }
     }
 }
+
+// MARK: EntryViewControllerDelegate
+
+extension EntryListController: EntryViewControllerDelegate {
+    
+    func entryViewController(entryViewController: EntryViewController, didFinishEditingEntryWithSave saveEntry: Bool) {
+        
+        if saveEntry {
+            
+            guard let entry = entryViewController.entry else { return }
+            
+            entry.text = entryViewController.textView.text
+            
+            if let _ = entry.dateCreated {
+                // old entry
+                entry.dateModified = NSDate()
+            } else {
+                // new entry
+                entry.dateCreated = NSDate()
+            }
+            
+        }
+    }
+}
