@@ -46,3 +46,13 @@ class EntryDataSource: NSObject, UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - Helper methods
+
+extension EntryDataSource {
+    
+    func entryAtIndexPath(indexPath: NSIndexPath) -> Entry {
+        
+        return fetchedResultsController.objectAtIndexPath(indexPath) as! Entry
+    }
+}
