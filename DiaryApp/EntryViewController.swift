@@ -75,10 +75,10 @@ extension EntryViewController {
     func setUpBarButtonItems() {
         
         let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelBarButtonItemTapped))
-        navigationItem.leftBarButtonItem = cancelBarButtonItem
+//        navigationItem.leftBarButtonItem = cancelBarButtonItem
         
         let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(saveBarButtonItemTapped))
-        navigationItem.rightBarButtonItem = saveBarButtonItem
+//        navigationItem.rightBarButtonItem = saveBarButtonItem
     }
     
     @objc func cancelBarButtonItemTapped() {
