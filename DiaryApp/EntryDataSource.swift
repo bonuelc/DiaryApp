@@ -43,6 +43,8 @@ class EntryDataSource: NSObject, UITableViewDataSource {
         
         cell.textLabel!.text = entry.text
         
+        cell.selectionStyle = .None
+        
         return cell
     }
 }
