@@ -30,6 +30,7 @@ class EntryListController: UIViewController {
         setUpBarButtonItems()
         
         tableView.dataSource = dataSource
+        tableView.delegate = self
     }
     
     // MARK: - Layout
@@ -62,6 +63,30 @@ extension EntryListController {
         entryVC.navigationItem.leftItemsSupplementBackButton = true
         
         self.navigationController?.pushViewController(entryVC, animated: true)
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension EntryListController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if let splitVC = splitViewController {
+            
+            // TODO: DRY
+            let entryVC = EntryViewController()
+            let entry = dataSource.entryAtIndexPath(indexPath)
+            entryVC.entry = entry
+            entryVC.delegate = self
+            
+            entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+            entryVC.navigationItem.leftItemsSupplementBackButton = true
+            
+            let entryNavController = UINavigationController(rootViewController: entryVC)
+            
+            splitVC.showDetailViewController(entryNavController, sender: nil)
+        }
     }
 }
 
