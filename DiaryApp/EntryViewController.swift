@@ -53,6 +53,12 @@ class EntryViewController: UIViewController {
         setUpBarButtonItems()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
+    }
+    
     // MARK: - Layout
     
     override func viewWillLayoutSubviews() {
