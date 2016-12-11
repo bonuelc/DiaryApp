@@ -10,6 +10,10 @@ import CoreLocation
 
 class LocationManager: CLLocationManager {
     
+    // MARK: - Properties
+    
+    let geocoder = CLGeocoder()
+    
     override init() {
         super.init()
         
