@@ -10,4 +10,11 @@ import CoreLocation
 
 class LocationManager: CLLocationManager {
     
+    override init() {
+        super.init()
+        
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            requestWhenInUseAuthorization()
+        }
+    }
 }
