@@ -41,4 +41,18 @@ extension LocationManager: CLLocationManagerDelegate {
             requestLocation()
         }
     }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.first else { return }
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            
+            if let onLocationFix = self.onLocationFix {
+                onLocationFix(placemarks?.first, error)
+            }
+        }
+        
+        
+    }
 }
