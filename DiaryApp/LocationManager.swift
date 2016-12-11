@@ -9,4 +9,5 @@
 import CoreLocation
 
 class LocationManager: CLLocationManager {
+    
 }
