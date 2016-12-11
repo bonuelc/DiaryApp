@@ -20,4 +20,10 @@ class Entry: NSManagedObject {
         
         return entry
     }
+    
+    static var allEntriesRequest: NSFetchRequest = {
+        let request = NSFetchRequest(entityName: Entry.entityName)
+        request.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]
+        return request
+    }()
 }
