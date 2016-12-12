@@ -4,8 +4,18 @@
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateModified" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="text" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="entry" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Location" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Entry" inverseName="location" inverseEntity="Entry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Entry" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="Location" positionX="-54" positionY="18" width="128" height="135"/>
     </elements>
 </model>
