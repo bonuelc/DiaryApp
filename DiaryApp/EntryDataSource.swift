@@ -15,9 +15,13 @@ class EntryDataSource: NSObject, UITableViewDataSource {
     let tableView: UITableView
     let fetchedResultsController: EntryFetchedResultsController
     
+    let reuseIdentifier = "cell"
+    
     init(tableView: UITableView, fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext) {
         
         self.tableView = tableView
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
         self.fetchedResultsController = EntryFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, tableView: tableView)
         
         super.init()
