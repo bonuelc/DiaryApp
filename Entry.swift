@@ -13,4 +13,11 @@ import CoreData
 class Entry: NSManagedObject {
     
     static let entityName = "\(Entry.self)"
+
+    class func entry(inManagedObjectContext moc: NSManagedObjectContext) -> Entry {
+        
+        let entry = NSEntityDescription.insertNewObjectForEntityForName(Entry.entityName, inManagedObjectContext: moc) as! Entry
+        
+        return entry
+    }
 }
