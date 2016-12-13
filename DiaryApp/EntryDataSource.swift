@@ -42,7 +42,7 @@ class EntryDataSource: NSObject, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: reuseIdentifier)
         let entry = fetchedResultsController.objectAtIndexPath(indexPath) as! Entry
         
         cell.textLabel!.text = entry.text
