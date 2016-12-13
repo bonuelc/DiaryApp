@@ -47,6 +47,13 @@ class EntryDataSource: NSObject, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            deleteEntryAtIndexPath(indexPath)
+        }
+    }
 }
 
 // MARK: - Helper methods
@@ -56,5 +63,14 @@ extension EntryDataSource {
     func entryAtIndexPath(indexPath: NSIndexPath) -> Entry {
         
         return fetchedResultsController.objectAtIndexPath(indexPath) as! Entry
+    }
+    
+    func deleteEntryAtIndexPath(indexPath: NSIndexPath) -> Entry {
+        
+        let entry = entryAtIndexPath(indexPath)
+        
+        fetchedResultsController.managedObjectContext.deleteObject(entry)
+        
+        return entry
     }
 }
