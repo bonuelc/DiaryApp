@@ -56,6 +56,7 @@ extension EntryListController {
         
         let entryVC = EntryViewController()
         entryVC.entry = Entry.entry(inManagedObjectContext: managedObjectContext!)
+        entryVC.delegate = self
         
         entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
         entryVC.navigationItem.leftItemsSupplementBackButton = true
