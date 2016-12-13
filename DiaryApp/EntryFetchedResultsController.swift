@@ -44,6 +44,9 @@ extension EntryFetchedResultsController: NSFetchedResultsControllerDelegate {
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.saveContext()
+        
         switch type {
         case .Insert:
             tableView?.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
