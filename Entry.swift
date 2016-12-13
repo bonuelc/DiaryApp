@@ -11,4 +11,6 @@ import CoreData
 
 
 class Entry: NSManagedObject {
+    
+    static let entityName = "\(Entry.self)"
 }
