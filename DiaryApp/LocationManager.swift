@@ -13,8 +13,22 @@ class LocationManager: CLLocationManager {
     override init() {
         super.init()
         
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            requestWhenInUseAuthorization()
+        self.delegate = self
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .NotDetermined: requestWhenInUseAuthorization()
+        case .AuthorizedWhenInUse, .AuthorizedAlways: requestLocation()
+        default: break
+        }
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        if status == .AuthorizedWhenInUse {
+            requestLocation()
         }
     }
 }
