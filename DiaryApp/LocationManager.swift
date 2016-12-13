@@ -42,6 +42,10 @@ extension LocationManager: CLLocationManagerDelegate {
         }
     }
     
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Unresolved error  \(error), \(error.userInfo)")
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.first else { return }
