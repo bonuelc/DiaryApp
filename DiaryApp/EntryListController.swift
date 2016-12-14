@@ -122,9 +122,9 @@ extension EntryListController: EntryViewControllerDelegate {
     
     func entryViewController(entryViewController: EntryViewController, didFinishEditingEntryWithSave saveEntry: Bool) {
         
+        guard let entry = entryViewController.entry else { return }
+        
         if saveEntry {
-            
-            guard let entry = entryViewController.entry else { return }
             
             entry.text = entryViewController.textView.text
             entry.location = entryViewController.location
@@ -137,6 +137,9 @@ extension EntryListController: EntryViewControllerDelegate {
                 entry.dateCreated = NSDate()
             }
             
+        } else if entry.dateCreated == nil{
+            // not an old entry
+            dataSource.deleteEntry(entry)
         }
     }
 }
