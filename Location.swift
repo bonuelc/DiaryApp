@@ -30,4 +30,8 @@ class Location: NSManagedObject {
         
         return location
     }
+    
+    override var description: String {
+        return [name, city, area].flatMap{ $0 }.joinWithSeparator(", ")
+    }
 }
