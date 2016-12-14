@@ -78,4 +78,11 @@ extension EntryDataSource {
         
         return entry
     }
+    
+    func deleteEntry(entry: Entry) -> Entry {
+        
+        fetchedResultsController.managedObjectContext.deleteObject(entry)
+        
+        return entry
+    }
 }
