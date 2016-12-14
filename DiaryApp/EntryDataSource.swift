@@ -46,6 +46,7 @@ class EntryDataSource: NSObject, UITableViewDataSource {
         let entry = fetchedResultsController.objectAtIndexPath(indexPath) as! Entry
         
         cell.textLabel!.text = entry.text
+        cell.detailTextLabel!.text = entry.location?.description
         
         cell.selectionStyle = .None
         
