@@ -14,6 +14,12 @@ class LocationManager: CLLocationManager {
     
     let geocoder = CLGeocoder()
     
+    var onLocationFix: ((CLPlacemark?, NSError?) -> Void)? {
+        didSet {
+            requestLocation()
+        }
+    }
+    
     override init() {
         super.init()
         
