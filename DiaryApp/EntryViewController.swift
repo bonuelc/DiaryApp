@@ -112,12 +112,6 @@ class EntryViewController: UIViewController {
         location = entry?.location
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
-    }
-    
     // MARK: - Layout
     
     override func viewWillLayoutSubviews() {
@@ -158,20 +152,33 @@ extension EntryViewController {
     func setUpBarButtonItems() {
         
         let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelBarButtonItemTapped))
-//        navigationItem.leftBarButtonItem = cancelBarButtonItem
+        navigationItem.leftBarButtonItem = cancelBarButtonItem
         
         let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(saveBarButtonItemTapped))
-//        navigationItem.rightBarButtonItem = saveBarButtonItem
+        navigationItem.rightBarButtonItem = saveBarButtonItem
     }
     
     @objc func cancelBarButtonItemTapped() {
 
         delegate?.entryViewController(self, didFinishEditingEntryWithSave: false)
+        
+        dismissDetailVC()
     }
     
     @objc func saveBarButtonItemTapped() {
         
         delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
+        
+        dismissDetailVC()
+    }
+    
+    func dismissDetailVC() {
+        
+        guard let splitVC = splitViewController, masterNavController = splitVC.viewControllers[0] as? UINavigationController where splitVC.collapsed else  {
+            return
+        }
+        
+        masterNavController.popToRootViewControllerAnimated(true)
     }
     
     @objc func toggleLocation() {

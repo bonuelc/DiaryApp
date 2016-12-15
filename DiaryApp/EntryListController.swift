@@ -70,9 +70,6 @@ extension EntryListController {
         let entryVC = EntryViewController(entry: newEntry, managedObjectContext: managedObjectContext)
         entryVC.delegate = self
         
-        entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-        entryVC.navigationItem.leftItemsSupplementBackButton = true
-        
         self.navigationController?.pushViewController(entryVC, animated: true)
     }
 }
@@ -89,9 +86,6 @@ extension EntryListController: UITableViewDelegate {
             let oldEntry = dataSource.entryAtIndexPath(indexPath)
             let entryVC = EntryViewController(entry: oldEntry, managedObjectContext: managedObjectContext)
             entryVC.delegate = self
-            
-            entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-            entryVC.navigationItem.leftItemsSupplementBackButton = true
             
             let entryNavController = UINavigationController(rootViewController: entryVC)
             
