@@ -64,13 +64,22 @@ class EntryListController: UIViewController {
 
 extension EntryListController {
     
-    @objc func presentEntryViewController() {
+    func presentEntryViewController(withEntry entry: Entry) {
         
-        let newEntry = Entry.entry(inManagedObjectContext: managedObjectContext)
-        let entryVC = EntryViewController(entry: newEntry, managedObjectContext: managedObjectContext)
-        entryVC.delegate = self
+        if let splitVC = splitViewController {
+            
+            let entryVC = EntryViewController(entry: entry, managedObjectContext: managedObjectContext)
+            entryVC.delegate = self
+            
+            let entryNavController = UINavigationController(rootViewController: entryVC)
+            
+            splitVC.showDetailViewController(entryNavController, sender: nil)
+        }
+    }
+    
+    @objc func presentNewEntryViewController() {
         
-        self.navigationController?.pushViewController(entryVC, animated: true)
+        presentEntryViewController(withEntry: Entry.entry(inManagedObjectContext: managedObjectContext))
     }
 }
 
@@ -80,17 +89,7 @@ extension EntryListController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if let splitVC = splitViewController {
-            
-            // TODO: DRY
-            let oldEntry = dataSource.entryAtIndexPath(indexPath)
-            let entryVC = EntryViewController(entry: oldEntry, managedObjectContext: managedObjectContext)
-            entryVC.delegate = self
-            
-            let entryNavController = UINavigationController(rootViewController: entryVC)
-            
-            splitVC.showDetailViewController(entryNavController, sender: nil)
-        }
+        presentEntryViewController(withEntry: dataSource.entryAtIndexPath(indexPath))
     }
 }
 
@@ -103,7 +102,7 @@ extension EntryListController {
         let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(toggleEditing(_:)))
         navigationItem.leftBarButtonItem = editButton
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(presentEntryViewController))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(presentNewEntryViewController))
         navigationItem.rightBarButtonItem = addButton
     }
     
