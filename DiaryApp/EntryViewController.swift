@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol EntryViewControllerDelegate {
     
@@ -67,13 +68,16 @@ class EntryViewController: UIViewController {
     var entry: Entry?
     var delegate: EntryViewControllerDelegate?
     
-    init(entry: Entry?) {
+    let locationManager: LocationManager
+    
+    init(entry: Entry?, locationManager: LocationManager = LocationManager()) {
         
         self.entry = entry
+        self.locationManager = locationManager
         
         super.init(nibName: nil, bundle: nil)
     }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
