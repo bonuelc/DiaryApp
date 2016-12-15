@@ -19,10 +19,21 @@ class EntryListController: UIViewController {
     
     // MARK: Properties
     
-    var managedObjectContext: NSManagedObjectContext?    
+    let managedObjectContext: NSManagedObjectContext
     lazy var dataSource: EntryDataSource = {
-        return EntryDataSource(tableView: self.tableView, fetchRequest: Entry.allEntriesRequest, managedObjectContext: self.managedObjectContext!)
+        return EntryDataSource(tableView: self.tableView, fetchRequest: Entry.allEntriesRequest, managedObjectContext: self.managedObjectContext)
     }()
+    
+    init(managedObjectContext: NSManagedObjectContext) {
+        
+        self.managedObjectContext = managedObjectContext
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +66,8 @@ extension EntryListController {
     
     @objc func presentEntryViewController() {
         
-        let newEntry = Entry.entry(inManagedObjectContext: managedObjectContext!)
-        let entryVC = EntryViewController(entry: newEntry, managedObjectContext: managedObjectContext!)
+        let newEntry = Entry.entry(inManagedObjectContext: managedObjectContext)
+        let entryVC = EntryViewController(entry: newEntry, managedObjectContext: managedObjectContext)
         entryVC.delegate = self
         
         entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -76,7 +87,7 @@ extension EntryListController: UITableViewDelegate {
             
             // TODO: DRY
             let oldEntry = dataSource.entryAtIndexPath(indexPath)
-            let entryVC = EntryViewController(entry: oldEntry, managedObjectContext: managedObjectContext!)
+            let entryVC = EntryViewController(entry: oldEntry, managedObjectContext: managedObjectContext)
             entryVC.delegate = self
             
             entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
