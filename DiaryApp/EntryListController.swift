@@ -127,6 +127,7 @@ extension EntryListController: EntryViewControllerDelegate {
             guard let entry = entryViewController.entry else { return }
             
             entry.text = entryViewController.textView.text
+            entry.location = entryViewController.location
             
             if let _ = entry.dateCreated {
                 // old entry
