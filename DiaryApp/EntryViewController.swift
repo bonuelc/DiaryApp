@@ -34,6 +34,7 @@ class EntryViewController: UIViewController {
     // MARK: Properties
     
     var entry: Entry?
+    var delegate: EntryViewControllerDelegate?
     
     init(entry: Entry?) {
         
