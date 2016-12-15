@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import CoreLocation
 
 protocol EntryViewControllerDelegate {
@@ -69,11 +70,13 @@ class EntryViewController: UIViewController {
     var delegate: EntryViewControllerDelegate?
     
     let locationManager: LocationManager
+    let managedObjectContext: NSManagedObjectContext
     
-    init(entry: Entry?, locationManager: LocationManager = LocationManager()) {
+    init(entry: Entry?, locationManager: LocationManager = LocationManager(), managedObjectContext: NSManagedObjectContext) {
         
         self.entry = entry
         self.locationManager = locationManager
+        self.managedObjectContext = managedObjectContext
         
         super.init(nibName: nil, bundle: nil)
     }

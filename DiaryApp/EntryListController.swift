@@ -56,7 +56,7 @@ extension EntryListController {
     @objc func presentEntryViewController() {
         
         let newEntry = Entry.entry(inManagedObjectContext: managedObjectContext!)
-        let entryVC = EntryViewController(entry: newEntry)
+        let entryVC = EntryViewController(entry: newEntry, managedObjectContext: managedObjectContext!)
         entryVC.delegate = self
         
         entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -76,7 +76,7 @@ extension EntryListController: UITableViewDelegate {
             
             // TODO: DRY
             let oldEntry = dataSource.entryAtIndexPath(indexPath)
-            let entryVC = EntryViewController(entry: oldEntry)
+            let entryVC = EntryViewController(entry: oldEntry, managedObjectContext: managedObjectContext!)
             entryVC.delegate = self
             
             entryVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
