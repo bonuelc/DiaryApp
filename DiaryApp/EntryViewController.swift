@@ -182,7 +182,11 @@ extension EntryViewController {
             
         } else {
             
+            activityIndicator.startAnimating()
+            
             locationManager.onLocationFix = { placemark, error in
+                
+                self.activityIndicator.stopAnimating()
                 
                 guard let location = Location.location(withPlacemark: placemark, inManagedObjectContext: self.managedObjectContext) else {
                     return
