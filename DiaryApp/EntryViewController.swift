@@ -31,6 +31,27 @@ class EntryViewController: UIViewController {
         return textView
     }()
     
+    lazy var label: UILabel = {
+        
+        let label = UILabel()
+        
+        guard let entry = self.entry else { return label }
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        if let dateModified = entry.dateModified {
+            label.text = "Date modified: \(dateFormatter.stringFromDate(dateModified))"
+        } else if let dateCreated = entry.dateCreated {
+            label.text = "Date created: \(dateFormatter.stringFromDate(dateCreated))"
+        }
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     // MARK: Properties
     
     var entry: Entry?
@@ -63,13 +84,18 @@ class EntryViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         
+        view.addSubview(label)
         view.addSubview(textView)
         
         NSLayoutConstraint.activateConstraints([
+            label.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
+            label.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
+            label.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            
             textView.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
             textView.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor),
             textView.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
-            textView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            textView.bottomAnchor.constraintEqualToAnchor(label.topAnchor),
         ])
     }
 }
