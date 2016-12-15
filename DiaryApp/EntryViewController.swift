@@ -66,6 +66,17 @@ class EntryViewController: UIViewController {
         return label
     }()
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        
+        activityIndicator.hidden = true
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        return activityIndicator
+    }()
+    
     // MARK: Properties
     
     var entry: Entry?
@@ -112,6 +123,7 @@ class EntryViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         
         view.addSubview(geolocateButton)
+        view.addSubview(activityIndicator)
         view.addSubview(label)
         view.addSubview(textView)
         
@@ -120,6 +132,11 @@ class EntryViewController: UIViewController {
             geolocateButton.heightAnchor.constraintEqualToConstant(40.0),
             geolocateButton.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
             geolocateButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            
+            activityIndicator.leftAnchor.constraintEqualToAnchor(geolocateButton.leftAnchor),
+            activityIndicator.topAnchor.constraintEqualToAnchor(geolocateButton.topAnchor),
+            activityIndicator.rightAnchor.constraintEqualToAnchor(geolocateButton.rightAnchor),
+            activityIndicator.bottomAnchor.constraintEqualToAnchor(geolocateButton.bottomAnchor),
             
             label.leftAnchor.constraintEqualToAnchor(geolocateButton.rightAnchor),
             label.topAnchor.constraintEqualToAnchor(geolocateButton.topAnchor),
