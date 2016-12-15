@@ -38,6 +38,8 @@ class EntryViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "icn_geolocate.png"), forState: .Normal)
         
+        button.addTarget(self, action: #selector(toggleLocation), forControlEvents: .TouchUpInside)
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -153,5 +155,24 @@ extension EntryViewController {
     @objc func saveBarButtonItemTapped() {
         
         delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
+    }
+    
+    @objc func toggleLocation() {
+        
+        if location != nil {
+            
+            location = nil
+            
+        } else {
+            
+            locationManager.onLocationFix = { placemark, error in
+                
+                guard let location = Location.location(withPlacemark: placemark, inManagedObjectContext: self.managedObjectContext) else {
+                    return
+                }
+                
+                self.location = location
+            }
+        }
     }
 }
