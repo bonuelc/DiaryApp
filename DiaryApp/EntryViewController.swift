@@ -68,6 +68,11 @@ class EntryViewController: UIViewController {
     
     var entry: Entry?
     var delegate: EntryViewControllerDelegate?
+    var location: Location? {
+        didSet {
+            geolocateButton.backgroundColor = location == nil ? .clearColor() : .blueColor()
+        }
+    }
     
     let locationManager: LocationManager
     let managedObjectContext: NSManagedObjectContext
@@ -80,7 +85,7 @@ class EntryViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
     }
-        
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -89,6 +94,9 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
         
         setUpBarButtonItems()
+        
+        // needs to be in viewDidLoad to trigger didSet
+        location = entry?.location
     }
     
     override func viewWillDisappear(animated: Bool) {
