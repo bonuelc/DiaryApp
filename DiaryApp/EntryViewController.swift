@@ -31,6 +31,16 @@ class EntryViewController: UIViewController {
         return textView
     }()
     
+    lazy var geolocateButton: UIButton = {
+        
+        let button = UIButton()
+        button.setImage(UIImage(named: "icn_geolocate.png"), forState: .Normal)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     lazy var label: UILabel = {
         
         let label = UILabel()
@@ -84,11 +94,18 @@ class EntryViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         
+        view.addSubview(geolocateButton)
         view.addSubview(label)
         view.addSubview(textView)
         
         NSLayoutConstraint.activateConstraints([
-            label.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
+            geolocateButton.widthAnchor.constraintEqualToConstant(40.0),
+            geolocateButton.heightAnchor.constraintEqualToConstant(40.0),
+            geolocateButton.leftAnchor.constraintEqualToAnchor(view.leftAnchor),
+            geolocateButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            
+            label.leftAnchor.constraintEqualToAnchor(geolocateButton.rightAnchor),
+            label.topAnchor.constraintEqualToAnchor(geolocateButton.topAnchor),
             label.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
             label.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
             
