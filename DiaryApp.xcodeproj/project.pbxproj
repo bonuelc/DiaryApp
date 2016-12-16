@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8505EB031E036094002C8156 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505EB021E036094002C8156 /* CoreDataController.swift */; };
 		854340581DF8AB0500E49443 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */; };
 		854340591DF8AB0500E49443 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854340571DF8AB0500E49443 /* Entry.swift */; };
 		856E66601DF9C4E800AF5070 /* EntryFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8505EB021E036094002C8156 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		854340561DF8AB0500E49443 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "../Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		854340571DF8AB0500E49443 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = ../Entry.swift; sourceTree = "<group>"; };
 		856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFetchedResultsController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
 				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
 				856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */,
+				8505EB021E036094002C8156 /* CoreDataController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				85AD0CAD1DF7729500810AB4 /* DiaryApp.xcdatamodeld in Sources */,
 				85AD0CA71DF7729500810AB4 /* EntryListController.swift in Sources */,
 				85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */,
+				8505EB031E036094002C8156 /* CoreDataController.swift in Sources */,
 				85AD0CA51DF7729500810AB4 /* AppDelegate.swift in Sources */,
 				856E66691DF9DEDD00AF5070 /* EntryDataSource.swift in Sources */,
 				857E1A3E1DFF1D1F0099918F /* Location.swift in Sources */,
