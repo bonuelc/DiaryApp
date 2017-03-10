@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard let window = window else { return false }
         window.backgroundColor = .whiteColor()
         
-        let splitVC = SplitViewController()
+        let splitVC = UISplitViewController()
         
         let masterVC = EntryListController(managedObjectContext: coreDataController.managedObjectContext)
         let masterNavController = UINavigationController(rootViewController: masterVC)
