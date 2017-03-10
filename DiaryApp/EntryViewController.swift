@@ -174,7 +174,7 @@ extension EntryViewController {
     
     func dismissDetailVC() {
         
-        guard let splitVC = splitViewController, masterNavController = splitVC.viewControllers[0] as? UINavigationController where splitVC.collapsed else  {
+        guard let splitVC = splitViewController, masterNavController = splitVC.viewControllers.first as? UINavigationController where splitVC.collapsed else  {
             return
         }
         
