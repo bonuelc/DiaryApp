@@ -106,7 +106,8 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpBarButtonItems()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
         
         // needs to be in viewDidLoad to trigger didSet
         location = entry?.location
@@ -148,38 +149,6 @@ class EntryViewController: UIViewController {
 // MARK: - Helper Methods
 
 extension EntryViewController {
-    
-    func setUpBarButtonItems() {
-        
-        let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelBarButtonItemTapped))
-        navigationItem.leftBarButtonItem = cancelBarButtonItem
-        
-        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(saveBarButtonItemTapped))
-        navigationItem.rightBarButtonItem = saveBarButtonItem
-    }
-    
-    @objc func cancelBarButtonItemTapped() {
-
-        delegate?.entryViewController(self, didFinishEditingEntryWithSave: false)
-        
-        dismissDetailVC()
-    }
-    
-    @objc func saveBarButtonItemTapped() {
-        
-        delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
-        
-        dismissDetailVC()
-    }
-    
-    func dismissDetailVC() {
-        
-        guard let splitVC = splitViewController, masterNavController = splitVC.viewControllers.first as? UINavigationController where splitVC.collapsed else  {
-            return
-        }
-        
-        masterNavController.popToRootViewControllerAnimated(true)
-    }
     
     @objc func toggleLocation() {
         
