@@ -113,6 +113,12 @@ class EntryViewController: UIViewController {
         location = entry?.location
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        delegate?.entryViewController(self, didFinishEditingEntryWithSave: true)
+    }
+    
     // MARK: - Layout
     
     override func viewWillLayoutSubviews() {
