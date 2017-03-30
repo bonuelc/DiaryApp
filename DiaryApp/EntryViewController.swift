@@ -49,6 +49,8 @@ class EntryViewController: UIViewController {
         
         let label = UILabel()
         
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
         guard let entry = self.entry else { return label }
         
         let dateFormatter = NSDateFormatter()
@@ -60,8 +62,6 @@ class EntryViewController: UIViewController {
         } else if let dateCreated = entry.dateCreated {
             label.text = "Date created: \(dateFormatter.stringFromDate(dateCreated))"
         }
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
