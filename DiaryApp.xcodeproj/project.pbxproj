@@ -22,6 +22,7 @@
 		85AD0CB21DF7729500810AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AD0CB01DF7729500810AB4 /* LaunchScreen.storyboard */; };
 		85AD0CBD1DF7729500810AB4 /* DiaryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD0CBC1DF7729500810AB4 /* DiaryAppTests.swift */; };
 		85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E43F5F1DF77AAF00261126 /* EntryViewController.swift */; };
+		85F9EB3B1E8D8B0B003CD3FA /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9EB3A1E8D8B0B003CD3FA /* AddEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		85AD0CBC1DF7729500810AB4 /* DiaryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAppTests.swift; sourceTree = "<group>"; };
 		85AD0CBE1DF7729500810AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85E43F5F1DF77AAF00261126 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		85F9EB3A1E8D8B0B003CD3FA /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				85AD0CA61DF7729500810AB4 /* EntryListController.swift */,
 				85E43F5F1DF77AAF00261126 /* EntryViewController.swift */,
+				85F9EB3A1E8D8B0B003CD3FA /* AddEntryViewController.swift */,
 				856E665F1DF9C4E800AF5070 /* EntryFetchedResultsController.swift */,
 				8505EB021E036094002C8156 /* CoreDataController.swift */,
 			);
@@ -257,6 +260,7 @@
 				85E43F601DF77AAF00261126 /* EntryViewController.swift in Sources */,
 				8505EB031E036094002C8156 /* CoreDataController.swift in Sources */,
 				85AD0CA51DF7729500810AB4 /* AppDelegate.swift in Sources */,
+				85F9EB3B1E8D8B0B003CD3FA /* AddEntryViewController.swift in Sources */,
 				856E66691DF9DEDD00AF5070 /* EntryDataSource.swift in Sources */,
 				857E1A3E1DFF1D1F0099918F /* Location.swift in Sources */,
 			);
