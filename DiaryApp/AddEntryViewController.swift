@@ -22,6 +22,8 @@ class AddEntryViewController: UIViewController {
         return button
     }()
     
+    var delegate: EntryListController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
