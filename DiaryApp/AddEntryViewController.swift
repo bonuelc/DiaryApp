@@ -19,6 +19,8 @@ class AddEntryViewController: UIViewController {
         
         button.setTitle("Add a new entry", forState: .Normal)
         
+        button.addTarget(self, action: #selector(presentNewEntryViewController), forControlEvents: .TouchUpInside)
+        
         return button
     }()
     
@@ -41,5 +43,9 @@ class AddEntryViewController: UIViewController {
             addButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
             addButton.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
             ])
+    }
+    
+    @objc func presentNewEntryViewController() {
+        delegate?.presentNewEntryViewController()
     }
 }
