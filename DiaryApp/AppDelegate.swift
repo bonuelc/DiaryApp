@@ -68,13 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: - Split view
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+        
         guard let detailNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let detailVC = detailNavController.topViewController as? EntryViewController else { return false }
-        if detailVC.entry == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the detailVC will be discarded.
-            return true
-        }
-        return false
+        
+        return detailNavController.topViewController is AddEntryViewController
     }
 }
 
