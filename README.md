@@ -1,5 +1,7 @@
 # DiaryApp
 
+Treehouse iOS Techdegree Project #10
+
 For this project, you will create a Core Data based Diary App in Swift. You will be responsible for creating the data layer, all code as well as the UI. You are free to follow the mockups provided or design your own UI, provided the user experience is clear. Given the relatively short feature set for this app, students should give special attention to writing clean, extensible code, unit tests, error handling and selecting just the right Swift language “tools” for the job. If that means lots of refactoring and getting peer reviews prior to submission, we hope you take the time to do so.
 
 Be sure your app offers the following features, at a minimum:
